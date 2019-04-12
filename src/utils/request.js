@@ -4,6 +4,8 @@
  */
 import { extend } from 'umi-request';
 import { notification } from 'antd';
+import { getTenantId, getSign, getToken, getTokenExpires } from '@/utils/auth'
+import moment from 'moment'
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
@@ -41,6 +43,12 @@ const errorHandler = error => {
  * 配置request请求时的默认参数
  */
 const request = extend({
+  headers: {
+    '_admin_sign': getSign(),
+    '_admin_ts': getSign(),
+    '_admin_eid': getSign(),
+    '_admin_tk': getSign()?getToken():null,
+  },
   errorHandler, // 默认错误处理
   credentials: 'include', // 默认请求是否带上cookie
 });

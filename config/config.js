@@ -42,6 +42,11 @@ export default {
    */
   routes: [
     {
+      path: '/Login',
+      component: '../layouts/UserLayout',
+      routes: [{ path: '/Login', component: './Login' }],
+    },
+    {
       path: '/user',
       component: '../layouts/UserLayout',
       routes: [{ path: '/user', component: './Welcome' }],
@@ -57,6 +62,12 @@ export default {
           name: 'welcome',
           icon: 'smile',
           component: './Welcome',
+        },
+        {
+          path: '/DriverManage',
+          name: 'DriverManage',
+          icon: 'smile',
+          component: './DriverManage',
         },
         {
           path: 'https://github.com/umijs/umi-blocks/tree/master/ant-design-pro',
@@ -86,4 +97,10 @@ export default {
   lessLoaderOptions: {
     javascriptEnabled: true,
   },
+  proxy: {
+    "/admin": {
+      "target": "http://console.cfec408136ed44964821146f5205a8216.cn-shenzhen.alicontainer.com",
+      "changeOrigin": true
+    }
+  }
 };

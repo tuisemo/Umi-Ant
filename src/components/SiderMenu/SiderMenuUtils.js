@@ -6,6 +6,9 @@ import { urlToList } from '../_utils/pathTools';
  * [{path:string},{path:string}] => {path,path2}
  * @param  menus
  */
+/**
+ * 路由扁平化
+ */
 export const getFlatMenuKeys = menuData => {
   let keys = [];
   menuData.forEach(item => {

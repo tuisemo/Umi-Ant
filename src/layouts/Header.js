@@ -93,6 +93,9 @@ class HeaderView extends PureComponent {
     const scrollTop = document.body.scrollTop + document.documentElement.scrollTop;
     if (!this.ticking) {
       this.ticking = true;
+      /**
+       * `与setTimeout相比，requestAnimationFrame最大的优势是由系统来决定回调函数的执行时机`
+       */
       requestAnimationFrame(() => {
         if (this.oldScrollTop > scrollTop) {
           this.setState({
