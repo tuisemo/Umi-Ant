@@ -45,8 +45,8 @@ const errorHandler = error => {
 const request = extend({
   headers: {
     '_admin_sign': getSign(),
-    '_admin_ts': getSign(),
-    '_admin_eid': getSign(),
+    '_admin_ts': moment().unix(),
+    '_admin_eid': getTenantId(),
     '_admin_tk': getSign()?getToken():null,
   },
   errorHandler, // 默认错误处理

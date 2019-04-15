@@ -2,7 +2,8 @@ import React, { PureComponent, Fragment } from "react";
 import { connect } from "dva";
 import { Table } from "antd";
 import { Link } from "dva/router";
-
+import CitySelecter from './CitySelecter'
+import ParamsForm from './ParamsForm'
 @connect(({ driverManage }) => ({
   list: driverManage.list,
   pageNum: driverManage.pageNum,
@@ -118,16 +119,20 @@ class DriverList extends PureComponent {
       }
     ];
     return (
-      <Table
-        rowKey={record => record.id}
-        dataSource={list}
-        columns={columns}
-        pagination={{
-          current: pageNum,
-          total: totalNum,
-          onChange: this.pageEvent.bind(this)
-        }}
-      />
+      <Fragment>
+        <ParamsForm></ParamsForm>
+        <Table
+          rowKey={record => record.id}
+          dataSource={list}
+          columns={columns}
+          pagination={{
+            current: pageNum,
+            total: totalNum,
+            onChange: this.pageEvent.bind(this)
+          }}
+        />
+
+      </Fragment>
     );
   }
 }
