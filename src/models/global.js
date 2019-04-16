@@ -1,4 +1,5 @@
 import { queryNotices } from '@/services/user';
+import { fetchOpenedCities } from '@/services/global';
 
 export default {
   namespace: 'global',
@@ -6,6 +7,7 @@ export default {
   state: {
     collapsed: false,
     notices: [],
+    'OPEN_CITY':{}
   },
 
   effects: {
@@ -65,6 +67,14 @@ export default {
         },
       });
     },
+    * fetchOpenCity({payload},{call,put}){
+      const res=yield call(fetchOpenedCities)
+      console.log('res: ', res);
+      yield put({
+        type:'saveOpenCity',
+        payload:res.data||[]
+      })
+    }
   },
 
   reducers: {
@@ -86,6 +96,16 @@ export default {
         notices: state.notices.filter(item => item.type !== payload),
       };
     },
+    saveOpenCity(state,{payload}){
+      let obj={}
+      payload.forEach(el=>{
+        obj[el.adCode]=el.city
+      })
+      return{
+        ...state,
+        'OPEN_CITY':obj
+      }
+    }
   },
 
   subscriptions: {

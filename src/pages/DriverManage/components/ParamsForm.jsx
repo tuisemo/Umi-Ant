@@ -1,7 +1,13 @@
 import React from 'react'
+import {connect} from 'dva'
 import { Form, Select } from 'antd'
 import CitySelecter from './CitySelecter'
 const { Option } = Select
+@connect(({global})=>(
+    {
+        'OPEN_CITY':global.OPEN_CITY
+    }
+))
 @Form.create()
 
 class ParamsForm extends React.Component {
@@ -11,6 +17,8 @@ class ParamsForm extends React.Component {
     }
 
     render() {
+        const { OPEN_CITY } = this.props
+        // console.log('OPEN_CITY: ', OPEN_CITY);
         const { getFieldDecorator } = this.props.form
 
         return (
