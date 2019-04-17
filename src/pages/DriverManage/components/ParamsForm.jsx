@@ -1,11 +1,11 @@
 import React from 'react'
-import {connect} from 'dva'
-import { Form, Select } from 'antd'
+import { connect } from 'dva'
+import { Form, Select, Button } from 'antd'
 import CitySelecter from './CitySelecter'
 const { Option } = Select
-@connect(({global})=>(
+@connect(({ global }) => (
     {
-        'OPEN_CITY':global.OPEN_CITY
+        'OPEN_CITY': global.OPEN_CITY
     }
 ))
 @Form.create()
@@ -15,10 +15,15 @@ class ParamsForm extends React.Component {
         super(props)
         this.state = {}
     }
+    handlerSearch = () => {
+        const { callbackFun } = this.props
+        const { getFieldsValue } = this.props.form
+        const params = getFieldsValue()
+        callbackFun(params)
 
+    }
     render() {
         const { OPEN_CITY } = this.props
-        // console.log('OPEN_CITY: ', OPEN_CITY);
         const { getFieldDecorator } = this.props.form
 
         return (
@@ -29,13 +34,20 @@ class ParamsForm extends React.Component {
                     )}
                 </Form.Item>
                 <Form.Item label="状态:">
-                    {getFieldDecorator('state', {})(
-                        <Select style={{width:120}}>
-                            <Option value="1">1</Option>
-                            <Option value="2">2</Option>
-                            <Option value="3">3</Option>
+                    {getFieldDecorator('state', {
+                        initialValue: null
+                    })(
+                        <Select style={{ width: 120 }} >
+                            <Option value={null}>全部</Option>
+                            <Option value={2}>未激活</Option>
+                            <Option value={3}>正常</Option>
+                            <Option value={4}>离职</Option>
+                            <Option value={10}>封号</Option>
                         </Select>
                     )}
+                </Form.Item>
+                <Form.Item>
+                    <Button type="primary" onClick={this.handlerSearch}>搜索</Button>
                 </Form.Item>
             </Form>
         )

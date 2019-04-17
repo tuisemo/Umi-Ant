@@ -69,7 +69,7 @@ export default {
     },
     * fetchOpenCity({payload},{call,put}){
       const res=yield call(fetchOpenedCities)
-      console.log('res: ', res);
+      // console.log('res: ', res);
       yield put({
         type:'saveOpenCity',
         payload:res.data||[]

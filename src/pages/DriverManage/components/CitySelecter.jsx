@@ -11,18 +11,24 @@ const { Option } = Select
 class CitySelecter extends PureComponent {
     constructor(props) {
         super(props)
+        const value = props.value || {}
         this.state = {
-
+            adcode: value.adcode
         }
     }
     handleChange = (val) => {
-        console.log('val: ', val)
+        const { onChange } = this.props
+        this.setState({
+            'adcode': val
+        })
+        onChange(val);
     };
     render() {
         const { OPEN_CITY } = this.props
-        console.log('OPEN_CITY: ', OPEN_CITY);
+        const { adcode } = this.state
         return (
-            <Select style={{ width: 120 }} onChange={this.handleChange}>
+            <Select defaultValue={null} style={{ width: 120 }} onChange={this.handleChange}>
+                <Option value={null}>全部</Option>
                 {
                     Object.keys(OPEN_CITY).map(el => {
                         return <Option value={el} key={el}>{OPEN_CITY[el]}</Option>
