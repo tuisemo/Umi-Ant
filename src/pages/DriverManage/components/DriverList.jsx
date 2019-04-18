@@ -3,6 +3,7 @@ import { connect } from "dva";
 import { Table, Form, Select, Button, Input } from "antd";
 import { Link } from "dva/router";
 import CitySelecter from './CitySelecter'
+import AddressModal from './AddressModal'
 const { Option } = Select
 @connect(({ global, driverManage }) => ({
   'OPEN_CITY': global.OPEN_CITY,
@@ -122,7 +123,9 @@ class DriverList extends PureComponent {
       {
         title: "家庭地址",
         key: "address",
-        dataIndex: "address"
+        render: (text, record) => (
+          record.address ? <span>{record.address.address}</span> : <AddressModal></AddressModal>
+        )
       },
       {
         title: "操作",

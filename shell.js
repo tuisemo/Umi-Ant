@@ -1,5 +1,5 @@
 const { exec } = require('child_process')
-
+const util = require('util');
 
 function gitRemoteUpdate() {
     exec(`git remote update -p`, (error, stdout, stderr) => {
