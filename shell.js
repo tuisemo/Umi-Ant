@@ -45,6 +45,7 @@ function gitCommit(msg) {
         }
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);
+        gitPush()
     })
 }
 
@@ -56,7 +57,6 @@ function gitPush(msg) {
         }
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);
-        gitPush()
     })
 }
 gitRemoteUpdate()
