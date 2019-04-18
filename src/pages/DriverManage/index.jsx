@@ -13,9 +13,9 @@ class DriverManage extends React.Component {
         <TabPane tab="专车" key="2">
           <DriverList bizType={301} />
         </TabPane>
-        <TabPane tab="出租车" key="3">
+        {/* <TabPane tab="出租车" key="3">
           <DriverList bizType={302} />
-        </TabPane>
+        </TabPane> */}
       </Tabs>
     );
   }
