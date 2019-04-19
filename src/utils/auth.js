@@ -4,7 +4,7 @@ import { TokenKey, TenantIdKey, Salt } from '@/config/'
 
 // expires see: https://github.com/js-cookie/js-cookie/wiki/Frequently-Asked-Questions#expire-cookies-in-less-than-a-day
 // 接口返回的 token 有效期目前为 1 天
-const oneDay = 1
+const oneDay = 2
 // const testMinutes = new Date(new Date().getTime() + 2 * 60 * 1000) //For test 2 minutes
 
 export function getSign(signParam) {
