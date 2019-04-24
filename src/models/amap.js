@@ -1,24 +1,13 @@
-import {
-  getMapAddress
-} from '@/services/amap'
+import { getMapAddress } from '@/services/amap';
+
 export default {
   namespace: 'amap',
-  state: {
-
-  },
+  state: {},
   effects: {
-    * getMapAddress({
-      payload
-    }, {
-      call,
-      put
-    }) {
-      const res = yield call(getMapAddress, payload)
-      return res
-    }
-
+    *getMapAddress({ payload }, { call }) {
+      const res = yield call(getMapAddress, payload);
+      return res;
+    },
   },
-  reducers: {
-
-  }
-}
+  reducers: {},
+};

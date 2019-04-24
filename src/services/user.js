@@ -13,8 +13,8 @@ export async function queryNotices() {
 }
 
 export async function fetchLogin(data) {
-  return request('/admin/v1/manage/token/create',{
-    method:'post',
-    body:JSON.stringify(data)
+  return request('/admin/v1/manage/token/create', {
+    method: 'post',
+    body: JSON.stringify(data),
   });
 }
