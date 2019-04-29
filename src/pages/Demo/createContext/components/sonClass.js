@@ -10,7 +10,7 @@ class SonClass extends PureComponent {
   render() {
     return (
       <div>
-        <p>this is son class</p>
+        <p>this is son components</p>
         <GrandsonClass />
       </div>
     );

@@ -21,10 +21,13 @@ class CreateContext extends PureComponent {
   render() {
     const { price } = this.state;
     return (
-      <Provider value={price}>
-        <Button onClick={this.clickGoods}>creatContext()</Button>
-        <SonClass />
-      </Provider>
+      <div>
+        <p>this is father components</p>
+        <Provider value={price}>
+          <Button onClick={this.clickGoods}>creatContext()</Button>
+          <SonClass />
+        </Provider>
+      </div>
     );
   }
 }

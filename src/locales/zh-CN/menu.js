@@ -7,4 +7,6 @@ export default {
   'menu.account.trigger': '触发报错',
   'menu.account.logout': '退出登录',
   'menu.DriverManage': '司机管理',
+  'menu.demo': '范例',
+  'menu.demo.createContext': '创建上下文',
 };

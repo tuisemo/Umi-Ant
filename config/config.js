@@ -74,6 +74,19 @@ export default {
           name: 'more-blocks',
           icon: 'block',
         },
+        {
+          path: '/demo',
+          name: 'demo',
+          icon: 'smile',
+          routes: [
+            {
+              path: 'createContext',
+              name: 'createContext',
+              icon: 'smile',
+              component: './Demo/createContext/index',
+            },
+          ],
+        },
       ],
     },
   ],
@@ -98,9 +111,9 @@ export default {
     javascriptEnabled: true,
   },
   proxy: {
-    "/admin": {
-      "target": "http://console.cfec408136ed44964821146f5205a8216.cn-shenzhen.alicontainer.com",
-      "changeOrigin": true
-    }
-  }
+    '/admin': {
+      target: 'http://console.cfec408136ed44964821146f5205a8216.cn-shenzhen.alicontainer.com',
+      changeOrigin: true,
+    },
+  },
 };

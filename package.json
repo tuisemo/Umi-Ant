@@ -44,6 +44,7 @@
     "babel-eslint": "^10.0.1",
     "cross-env": "^5.1.1",
     "cross-port-killer": "^1.0.1",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^3.0.1",
@@ -77,6 +78,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }

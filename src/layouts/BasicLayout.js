@@ -57,9 +57,9 @@ class BasicLayout extends React.PureComponent {
       dispatch,
       route: { routes, authority },
     } = this.props;
-    dispatch({
-      type: 'global/fetchOpenCity',
-    });
+    // dispatch({
+    //   type: 'global/fetchOpenCity',
+    // });
     dispatch({
       type: 'user/fetchCurrent',
     });

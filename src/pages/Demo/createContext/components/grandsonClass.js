@@ -3,7 +3,7 @@ import { Consumer } from '../context';
 
 const GrandsonClass = () => (
   <div>
-    <p>this is grandson class</p>
+    <p>this is grandson components</p>
     <Consumer>{price => <span>{price}</span>}</Consumer>
   </div>
 );
