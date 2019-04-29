@@ -85,6 +85,18 @@ export default {
               icon: 'smile',
               component: './Demo/createContext/index',
             },
+            {
+              path: 'stateComponent',
+              name: 'stateComponent',
+              icon: 'smile',
+              component: './Demo/reactHooks/stateComponent',
+            },
+            {
+              path: 'hooksComponent',
+              name: 'hooksComponent',
+              icon: 'smile',
+              component: './Demo/reactHooks/hooksComponent',
+            },
           ],
         },
       ],
