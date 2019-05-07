@@ -115,6 +115,12 @@ export default {
               icon: 'smile',
               component: './Demo/reactHooks/renderProps/MouseTracker',
             },
+            {
+              path: 'FormField/index',
+              name: 'FormField',
+              icon: 'smile',
+              component: './Demo/FormField/index',
+            },
           ],
         },
       ],

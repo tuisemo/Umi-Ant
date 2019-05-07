@@ -9,4 +9,9 @@ export default {
   'menu.DriverManage': '司机管理',
   'menu.demo': '范例',
   'menu.demo.createContext': '创建上下文',
+  'menu.demo.stateComponent': '有状态组件',
+  'menu.demo.hooksComponent': 'hooks组件',
+  'menu.demo.normalComponent': '普通组件',
+  'menu.demo.MouseTracker': '鼠标追踪',
+  'menu.demo.FormField': '表单域',
 };
