@@ -14,4 +14,6 @@ export default {
   'menu.demo.normalComponent': '普通组件',
   'menu.demo.MouseTracker': '鼠标追踪',
   'menu.demo.FormField': '表单域',
+  'menu.Example': '案例',
+  'menu.Example.userTable': '用户列表',
 };

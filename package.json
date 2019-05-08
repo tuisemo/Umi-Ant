@@ -18,7 +18,8 @@
     "test": "umi test",
     "test:component": "umi test ./src/components",
     "test:all": "node ./tests/run-tests.js",
-    "prettier": "node ./scripts/prettier.js"
+    "prettier": "node ./scripts/prettier.js",
+    "common-fix": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "dependencies": {
     "ant-design-pro": "^2.1.1",

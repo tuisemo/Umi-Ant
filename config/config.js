@@ -123,6 +123,19 @@ export default {
             },
           ],
         },
+        {
+          path: '/Example',
+          name: 'Example',
+          icon: 'smile',
+          routes: [
+            {
+              path: 'userTable',
+              name: 'userTable',
+              icon: 'smile',
+              component: './Example/userTable/index',
+            },
+          ],
+        },
       ],
     },
   ],
@@ -149,6 +162,10 @@ export default {
   proxy: {
     '/admin': {
       target: 'http://console.cfec408136ed44964821146f5205a8216.cn-shenzhen.alicontainer.com',
+      changeOrigin: true,
+    },
+    '/api': {
+      target: 'http://localhost:3000',
       changeOrigin: true,
     },
   },
